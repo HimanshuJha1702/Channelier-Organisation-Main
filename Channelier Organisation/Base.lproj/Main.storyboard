@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -172,7 +172,7 @@
                                 <rect key="frame" x="29" y="414" width="18" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="button:Y0p-lT-n8u:image"/>
-                                <state key="selected" image="EEB4015A-901B-4BFD-9EB5-345476386702"/>
+                                <state key="selected" image="5BEE5FB5-2CF9-4078-A627-DBB0B1675E24"/>
                                 <connections>
                                     <action selector="checkboxAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t9n-ww-VLK"/>
                                 </connections>
@@ -417,7 +417,7 @@
                                     <action selector="productReport2:" destination="Ij1-vW-DcG" eventType="touchUpInside" id="TZx-7e-fM6"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Reports.png" translatesAutoresizingMaskIntoConstraints="NO" id="Oie-F9-kC4">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Reports" translatesAutoresizingMaskIntoConstraints="NO" id="Oie-F9-kC4">
                                 <rect key="frame" x="200" y="20" width="152" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -481,23 +481,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Reports.png" translatesAutoresizingMaskIntoConstraints="NO" id="8gL-zG-rzj">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Reports" translatesAutoresizingMaskIntoConstraints="NO" id="8gL-zG-rzj">
                                 <rect key="frame" x="23" y="184" width="152" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Reports.png" translatesAutoresizingMaskIntoConstraints="NO" id="opS-3t-O7s">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Reports" translatesAutoresizingMaskIntoConstraints="NO" id="opS-3t-O7s">
                                 <rect key="frame" x="200" y="184" width="152" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Reports.png" translatesAutoresizingMaskIntoConstraints="NO" id="QF7-jP-n1E">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Reports" translatesAutoresizingMaskIntoConstraints="NO" id="QF7-jP-n1E">
                                 <rect key="frame" x="23" y="353" width="152" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Reports.png" translatesAutoresizingMaskIntoConstraints="NO" id="AEZ-lK-Ydt">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Reports" translatesAutoresizingMaskIntoConstraints="NO" id="AEZ-lK-Ydt">
                                 <rect key="frame" x="200" y="353" width="152" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Reports.png" translatesAutoresizingMaskIntoConstraints="NO" id="zXk-xN-LQx">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Reports" translatesAutoresizingMaskIntoConstraints="NO" id="zXk-xN-LQx">
                                 <rect key="frame" x="23" y="20" width="152" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -554,7 +554,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="EEB4015A-901B-4BFD-9EB5-345476386702" width="42" height="42">
+        <image name="5BEE5FB5-2CF9-4078-A627-DBB0B1675E24" width="42" height="42">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMSAAGGoF8QD05T
 S2V5ZWRBcmNoaXZlctEICVRyb290gAGvEBcLDBkaIRQmKisyNTo9PkNGR0pUXF1hZFUkbnVsbNYNDg8Q
@@ -2468,7 +2468,7 @@ AAAAZwAAAAAAAAAAAAAAAAABvYg
 </mutableData>
         </image>
         <image name="Home" width="12" height="12"/>
-        <image name="Reports.png" width="64" height="64"/>
+        <image name="Reports" width="64" height="64"/>
         <image name="Settings" width="12" height="12"/>
         <image name="back_button" width="47" height="63"/>
         <image name="button:Y0p-lT-n8u:image" width="65" height="65">
