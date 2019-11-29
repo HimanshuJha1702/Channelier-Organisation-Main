@@ -11,6 +11,21 @@ import UIKit
 class SalesReport: UIViewController {
 
     
+    let transition = SlideOutTransitionFilter()
+    
+    @IBAction func didTapMenu(_ sender: UIButton) {
+        let mainstoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                let FilterTableViewController = mainstoryboard.instantiateViewController(withIdentifier: "FilterTableViewController") as! FilterTableViewController
+                FilterTableViewController.modalPresentationStyle = .overCurrentContext
+                
+                FilterTableViewController.didTapMenuType = { menuType in
+                     self.transitionToNew(menuType)
+                }
+        //        menuViewController.modalPresentationStyle = .overCurrentContext
+                FilterTableViewController.transitioningDelegate = self
+                present(FilterTableViewController, animated: true)
+    }
+    
     @IBAction func backBtn(_ sender: UIButton) {
         let transition: CATransition = CATransition()
         transition.duration = 0.4
@@ -35,15 +50,40 @@ class SalesReport: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func transitionToNew(_ menuType: MenuType2) {
+            
+            switch menuType {
+            
+            case .clearFilter:
+                print("cleared")
+                
+            case .dateAdded:
+                print("cleared")
+    
+            case .bySalesman:
+                print("cleared")
+                
+            case .filter1:
+                print("cleared")
+                
+            default :
+                        break
+                
+            }
     }
-    */
-
 }
+
+extension SalesReport: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.isPresenting = true
+        return transition
+    }
+
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.isPresenting = false
+        return transition
+    }
+}
+
+

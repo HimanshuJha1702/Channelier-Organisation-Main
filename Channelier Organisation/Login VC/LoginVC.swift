@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import Toast_Swift
 
 class LoginVC: UIViewController {
 
@@ -41,6 +42,17 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func loginAction(_ sender: UIButton) {
+        
+//        let parameters = ["email":"sandeeppvec@gmail.com","password":"demo"]
+//        guard let url = URL(string: " https://dev.channelier.com/index.php?route=feed/rest_api_v2/validateLogin&gcmToken=f94Wm0gGyag:APA91bGIxPBb5MbvXy2qWf4aL70VKtGUEVK8asCCwtOxDs-UHZhacFxBxXwuk2EvZ2ThghbXhAp4hDyppAN9QUP-9w9FmfPQu5GLGPHfI5HyIgP27UYU-x2kcZxmMoPjCMJs0J20vUXv&gcmFlag=0&date=0&key=12345&syncdate=0") else { return }
+//        var request = URLRequest(url: url)
+//        request.httpMethod = "POST"
+//        
+//        let session = URLSession.shared
+//        session.dataTask(with: url) { (data, response, err) in
+//     
+//        }.resume()
+//        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
          let controller = storyboard.instantiateViewController(withIdentifier : "HomeViewController" )
          controller.modalPresentationStyle = .fullScreen
@@ -54,7 +66,25 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func forgotPswAction(_ sender: UIButton) {
-        
+        print("Function called")
+                let alert = UIAlertController(title: "Forgot Password", message: "Enter the e-mail or mobile number for your account. The password shall be mailed/messaged to you.", preferredStyle: .alert)
+                alert.addTextField{ (tf) in tf.placeholder = "Email" }
+                let submit = UIAlertAction(title: "Submit", style: .default)
+                { (_) in guard let email = alert.textFields?.first?.text
+                    else { return }
+                    self.emailID = email
+                    print(self.emailID)
+                    if(self.emailID == "nil" || self.emailID == ""){
+                        self.view.makeToast("Invalid Email/Mobile")
+                    }
+                    else {
+                        self.view.makeToast("Invalid Email/Mobile")
+                    }
+                }
+                let cancel = UIAlertAction(title: "Cancel", style: .default)
+                alert.addAction(cancel)
+                alert.addAction(submit)
+                present(alert, animated: true, completion: nil)
     }
     
     @IBAction func websiteAction(_ sender: UIButton) {
@@ -90,10 +120,15 @@ class LoginVC: UIViewController {
     }
     
     
+    @objc func dismissKeyboard() {
+        self.view.endEditing(true)
+    }
+    
     
     @IBAction func privacyPolicyAction(_ sender: UIButton) {
         openLink(urlString: "https://beta.channelier.com/index.php?route=information/information/info&information_id=3")
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,6 +142,9 @@ class LoginVC: UIViewController {
         passwordBtn.setLeftPaddingPoints(10)
         checkboxBtn.setImage(UIImage(named:"CheckBox"), for: .selected)
         checkboxBtn.setImage(UIImage(named:"UncheckedBox"), for: .normal)
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        self.view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
     }
 

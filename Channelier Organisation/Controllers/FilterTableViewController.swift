@@ -1,24 +1,25 @@
-
 //
-//  MenuViewController.swift
-//  SlideInTransition
+//  FilterTableViewController.swift
+//  Channelier Organisation
 //
-//  Created by Gary Tokman on 1/12/19.
-//  Copyright © 2019 Gary Tokman. All rights reserved.
+//  Created by Himanshu Jha on 29/11/19.
+//  Copyright © 2019 Himanshu Jha. All rights reserved.
 //
 
 import UIKit
 
-enum MenuType: Int {
-    case home
-    case profile
-    case settings
+enum MenuType2: Int {
+    case clearFilter
+    case dateAdded
+    case Status
+    case bySalesman
+    case filter1
     
 }
 
-class MenuViewController: UITableViewController {
+class FilterTableViewController: UITableViewController{
 
-    var didTapMenuType: ((MenuType) -> Void)?
+    var didTapMenuType: ((MenuType2) -> Void)?
     
     @objc func dismissController () {
         self.dismiss(animated: true, completion: nil)
@@ -31,7 +32,7 @@ class MenuViewController: UITableViewController {
     
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let menuType = MenuType(rawValue: indexPath.row){
+        if let menuType = MenuType2(rawValue: indexPath.row){
         dismiss(animated: true) { [weak self] in
             print("Dismissing: \(menuType)")
             self?.didTapMenuType?(menuType)
@@ -43,4 +44,9 @@ class MenuViewController: UITableViewController {
         }
     }
 }
+
+
+
+
+       
 

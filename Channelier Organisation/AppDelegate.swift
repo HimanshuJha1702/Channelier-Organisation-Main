@@ -16,8 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+       // self.imageCreate()
         return true
     }
+    
+//    private func imageCreate () {
+//        let launchScreen = UIStoryboard.init(name: "LaunchScreen", bundle: nil)
+//
+//    }
 
     // MARK: UISceneSession Lifecycle
 

@@ -13,31 +13,39 @@
 		4A2AAA6A237D1EA5001199D1 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2AAA69237D1EA5001199D1 /* SettingsVC.swift */; };
 		4A2AAA6C237D1F29001199D1 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2AAA6B237D1F29001199D1 /* MenuViewController.swift */; };
 		4A2AAA6E237D1F93001199D1 /* SlideInTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2AAA6D237D1F93001199D1 /* SlideInTransition.swift */; };
+		4A5C24792390E93B00259995 /* FilterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5C24782390E93B00259995 /* FilterTableViewController.swift */; };
+		4A5C247B2390F14B00259995 /* SlideOutTransitionFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5C247A2390F14B00259995 /* SlideOutTransitionFilter.swift */; };
 		4A76A4DC237C572400FCE082 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A76A4DB237C572400FCE082 /* AppDelegate.swift */; };
 		4A76A4DE237C572400FCE082 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A76A4DD237C572400FCE082 /* SceneDelegate.swift */; };
 		4A76A4E3237C572400FCE082 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A76A4E1237C572400FCE082 /* Main.storyboard */; };
 		4A76A4E5237C572800FCE082 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A76A4E4237C572800FCE082 /* Assets.xcassets */; };
-		4A76A4E8237C572800FCE082 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A76A4E6237C572800FCE082 /* LaunchScreen.storyboard */; };
 		4AA44DF2237C5ECC008E555E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA44DF1237C5ECC008E555E /* LoginVC.swift */; };
+		4AF1F205238D30AF00CD8BE7 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AF1F204238D30AF00CD8BE7 /* Launch Screen.storyboard */; };
 		4AFF1306237E98CE00EFCE5A /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF1305237E98CE00EFCE5A /* ContainerVC.swift */; };
+		DCC217396B44358FCBC90B35 /* libPods-Channelier Organisation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1B8A05BDEF9ADE876FC4824 /* libPods-Channelier Organisation.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		40B50DCB6102978BA1B1F7C6 /* Pods-Channelier Organisation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Channelier Organisation.release.xcconfig"; path = "Target Support Files/Pods-Channelier Organisation/Pods-Channelier Organisation.release.xcconfig"; sourceTree = "<group>"; };
 		4A1DDD4B237FDFBA00B7BE1D /* SalesReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesReport.swift; sourceTree = "<group>"; };
 		4A2AAA65237D1C93001199D1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4A2AAA67237D1E93001199D1 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		4A2AAA69237D1EA5001199D1 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		4A2AAA6B237D1F29001199D1 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		4A2AAA6D237D1F93001199D1 /* SlideInTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInTransition.swift; sourceTree = "<group>"; };
+		4A5C24782390E93B00259995 /* FilterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewController.swift; sourceTree = "<group>"; };
+		4A5C247A2390F14B00259995 /* SlideOutTransitionFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideOutTransitionFilter.swift; sourceTree = "<group>"; };
 		4A76A4D8237C572400FCE082 /* Channelier Organisation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Channelier Organisation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A76A4DB237C572400FCE082 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A76A4DD237C572400FCE082 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4A76A4E2237C572400FCE082 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4A76A4E4237C572800FCE082 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4A76A4E7237C572800FCE082 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A76A4E9237C572800FCE082 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AA44DF1237C5ECC008E555E /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		4AF1F204238D30AF00CD8BE7 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		4AFF1305237E98CE00EFCE5A /* ContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
+		A1B8A05BDEF9ADE876FC4824 /* libPods-Channelier Organisation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Channelier Organisation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B59D595856C60EF8F24812A4 /* Pods-Channelier Organisation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Channelier Organisation.debug.xcconfig"; path = "Target Support Files/Pods-Channelier Organisation/Pods-Channelier Organisation.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCC217396B44358FCBC90B35 /* libPods-Channelier Organisation.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +70,8 @@
 				4A2AAA6D237D1F93001199D1 /* SlideInTransition.swift */,
 				4AFF1305237E98CE00EFCE5A /* ContainerVC.swift */,
 				4A1DDD4B237FDFBA00B7BE1D /* SalesReport.swift */,
+				4A5C24782390E93B00259995 /* FilterTableViewController.swift */,
+				4A5C247A2390F14B00259995 /* SlideOutTransitionFilter.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -70,6 +81,8 @@
 			children = (
 				4A76A4DA237C572400FCE082 /* Channelier Organisation */,
 				4A76A4D9237C572400FCE082 /* Products */,
+				BCA1C2A5336DFFDC8724F4CE /* Pods */,
+				62427FA0E474939742119080 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,8 +103,8 @@
 				4A76A4DD237C572400FCE082 /* SceneDelegate.swift */,
 				4A76A4E1237C572400FCE082 /* Main.storyboard */,
 				4A76A4E4237C572800FCE082 /* Assets.xcassets */,
-				4A76A4E6237C572800FCE082 /* LaunchScreen.storyboard */,
 				4A76A4E9237C572800FCE082 /* Info.plist */,
+				4AF1F204238D30AF00CD8BE7 /* Launch Screen.storyboard */,
 			);
 			path = "Channelier Organisation";
 			sourceTree = "<group>";
@@ -104,6 +117,23 @@
 			path = "Login VC";
 			sourceTree = "<group>";
 		};
+		62427FA0E474939742119080 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1B8A05BDEF9ADE876FC4824 /* libPods-Channelier Organisation.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BCA1C2A5336DFFDC8724F4CE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B59D595856C60EF8F24812A4 /* Pods-Channelier Organisation.debug.xcconfig */,
+				40B50DCB6102978BA1B1F7C6 /* Pods-Channelier Organisation.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -111,6 +141,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A76A4EC237C572800FCE082 /* Build configuration list for PBXNativeTarget "Channelier Organisation" */;
 			buildPhases = (
+				76DF3AED795204A667010BC5 /* [CP] Check Pods Manifest.lock */,
 				4A76A4D4237C572400FCE082 /* Sources */,
 				4A76A4D5237C572400FCE082 /* Frameworks */,
 				4A76A4D6237C572400FCE082 /* Resources */,
@@ -162,19 +193,45 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A76A4E8237C572800FCE082 /* LaunchScreen.storyboard in Resources */,
 				4A76A4E5237C572800FCE082 /* Assets.xcassets in Resources */,
+				4AF1F205238D30AF00CD8BE7 /* Launch Screen.storyboard in Resources */,
 				4A76A4E3237C572400FCE082 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		76DF3AED795204A667010BC5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Channelier Organisation-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4A76A4D4237C572400FCE082 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A5C24792390E93B00259995 /* FilterTableViewController.swift in Sources */,
 				4A2AAA68237D1E93001199D1 /* ProfileVC.swift in Sources */,
 				4A76A4DC237C572400FCE082 /* AppDelegate.swift in Sources */,
 				4A76A4DE237C572400FCE082 /* SceneDelegate.swift in Sources */,
@@ -185,6 +242,7 @@
 				4A2AAA66237D1C93001199D1 /* HomeViewController.swift in Sources */,
 				4A1DDD4C237FDFBA00B7BE1D /* SalesReport.swift in Sources */,
 				4A2AAA6A237D1EA5001199D1 /* SettingsVC.swift in Sources */,
+				4A5C247B2390F14B00259995 /* SlideOutTransitionFilter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,14 +255,6 @@
 				4A76A4E2237C572400FCE082 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		4A76A4E6237C572800FCE082 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4A76A4E7237C572800FCE082 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -326,6 +376,7 @@
 		};
 		4A76A4ED237C572800FCE082 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B59D595856C60EF8F24812A4 /* Pods-Channelier Organisation.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -339,12 +390,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Channelier-Organisation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		4A76A4EE237C572800FCE082 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40B50DCB6102978BA1B1F7C6 /* Pods-Channelier Organisation.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -358,7 +410,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Channelier-Organisation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

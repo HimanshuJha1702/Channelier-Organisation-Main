@@ -1,0 +1,6 @@
+module Pods_Channelier_Organisation {
+  umbrella header "Pods-Channelier Organisation-umbrella.h"
+
+  export *
+  module * { export * }
+}
