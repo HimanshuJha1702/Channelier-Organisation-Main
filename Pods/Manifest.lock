@@ -1,16 +1,24 @@
 PODS:
+  - KRActivityIndicatorView (3.0.4)
+  - KRProgressHUD (3.4.4):
+    - KRActivityIndicatorView (= 3.0.4)
   - Toast-Swift (5.0.0)
 
 DEPENDENCIES:
+  - KRProgressHUD
   - Toast-Swift (~> 5.0.0)
 
 SPEC REPOS:
   trunk:
+    - KRActivityIndicatorView
+    - KRProgressHUD
     - Toast-Swift
 
 SPEC CHECKSUMS:
+  KRActivityIndicatorView: 549db10b9578d58bac73db063d8b544e8970f7f2
+  KRProgressHUD: c3b9a48a0ee4824ea13212ac3f1efa50dca021e3
   Toast-Swift: 36f4720243c8582c2be243a60a51e193c761f541
 
-PODFILE CHECKSUM: a54adac50743ff1a1d2d7ced04cb51c785a59947
+PODFILE CHECKSUM: 3a31f3a823cab7c71d8c1a0f674af52e129023af
 
 COCOAPODS: 1.8.4

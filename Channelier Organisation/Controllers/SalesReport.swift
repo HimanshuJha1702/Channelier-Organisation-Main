@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import WebKit
 
-class SalesReport: UIViewController {
+class SalesReport: UIViewController, WKNavigationDelegate {
 
     
     let transition = SlideOutTransitionFilter()
@@ -25,6 +26,7 @@ class SalesReport: UIViewController {
                 FilterTableViewController.transitioningDelegate = self
                 present(FilterTableViewController, animated: true)
     }
+    @IBOutlet weak var webView: WKWebView!
     
     @IBAction func backBtn(_ sender: UIButton) {
         let transition: CATransition = CATransition()
@@ -40,7 +42,12 @@ class SalesReport: UIViewController {
     }
     
     
+    
     override func viewDidLoad() {
+        
+        let url = URL(string: "https://dev.channelier.com/index.php?route=report/order/sales&email=sandeeppvec@gmail.com&password=demo&location_app=1")!
+        webView.load(URLRequest(url: url))
+        
         super.viewDidLoad()
         let label:UILabel = UILabel(frame: CGRect(x: self.view.frame.width/3.0 , y: 30, width: 150, height: 30))
         label.text = "Sales Report"

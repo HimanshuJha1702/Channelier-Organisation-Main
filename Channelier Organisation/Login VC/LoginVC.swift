@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 import Toast_Swift
+import KRProgressHUD
 
 class LoginVC: UIViewController {
 
@@ -41,32 +42,73 @@ class LoginVC: UIViewController {
         iconClick = !iconClick
     }
     
+    
+    func validLogin () {
+        DispatchQueue.main.async(execute: {
+            let mainstoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let vc = mainstoryboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: false, completion: nil)
+        })
+    }
+    
+    func wrongCredentials() {
+        DispatchQueue.main.async(execute: {
+        let alert = UIAlertController(title: "Warning!", message: "Wrong Credentials", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        })
+    }
     @IBAction func loginAction(_ sender: UIButton) {
         
-//        let parameters = ["email":"sandeeppvec@gmail.com","password":"demo"]
-//        guard let url = URL(string: " https://dev.channelier.com/index.php?route=feed/rest_api_v2/validateLogin&gcmToken=f94Wm0gGyag:APA91bGIxPBb5MbvXy2qWf4aL70VKtGUEVK8asCCwtOxDs-UHZhacFxBxXwuk2EvZ2ThghbXhAp4hDyppAN9QUP-9w9FmfPQu5GLGPHfI5HyIgP27UYU-x2kcZxmMoPjCMJs0J20vUXv&gcmFlag=0&date=0&key=12345&syncdate=0") else { return }
-//        var request = URLRequest(url: url)
-//        request.httpMethod = "POST"
-//        
-//        let session = URLSession.shared
-//        session.dataTask(with: url) { (data, response, err) in
-//     
-//        }.resume()
-//        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-         let controller = storyboard.instantiateViewController(withIdentifier : "HomeViewController" )
-         controller.modalPresentationStyle = .fullScreen
-        // let navController = UINavigationController (rootViewController: controller)
-         self.present(controller, animated: true, completion: nil)
-         //self.navigationController?.navigationBar.isHidden = true
+        let parameters = ["email":emailTxtField.text ?? "none","password":passwordBtn.text ?? "none"] as [String : Any]
+                print(parameters)
+                guard let url = URL(string: "https://dev.channelier.com/index.php?route=feed/rest_api_v2/validateLogin&gcmToken=f94Wm0gGyag:APA91bGIxPBb5MbvXy2qWf4aL70VKtGUEVK8asCCwtOxDs-UHZhacFxBxXwuk2EvZ2ThghbXhAp4hDyppAN9QUP-9w9FmfPQu5GLGPHfI5HyIgP27UYU-x2kcZxmMoPjCMJs0J20vUXv&gcmFlag=0&date=0&key=12345&syncdate=0") else { return }
+                var request = URLRequest(url: url)
+                request.httpMethod = "POST"
+        //        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+                guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else { return }
+                request.httpBody = httpBody
+                
+                let session = URLSession.shared
+                session.dataTask(with: request) { (data, response, error) in
+                    if let response = response {
+                        //print(response)
+                    }
+                    
+                    if let data = data {
+                        do {
+                            let json = try JSONSerialization.jsonObject(with: data, options: [])
+                            if let dictionary = json as? [String: Any?] {
+                                print(dictionary)
+                                let checkVar = dictionary["gcm_success"] as? Int32
+                                if (checkVar == 0)
+                                {
+                                    self.validLogin()
+                                }
+
+                                else {
+                                    print("I came here")
+                                    self.wrongCredentials()
+                                }
+                                                                                               
+                            }
+                            print(json)
+                        } catch {
+                            print(error)
+                        }
+                    }
+                    
+                }.resume()
+//        self.validLogin()
     }
+ 
     
     @IBAction func registerAction(_ sender: UIButton) {
         openLink(urlString: "https://beta.channelier.com/index.php?route=account/register")
     }
     
     @IBAction func forgotPswAction(_ sender: UIButton) {
-        print("Function called")
                 let alert = UIAlertController(title: "Forgot Password", message: "Enter the e-mail or mobile number for your account. The password shall be mailed/messaged to you.", preferredStyle: .alert)
                 alert.addTextField{ (tf) in tf.placeholder = "Email" }
                 let submit = UIAlertAction(title: "Submit", style: .default)
@@ -88,7 +130,7 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func websiteAction(_ sender: UIButton) {
-        
+        openLink(urlString: "https://beta.channelier.com")
     }
     
     @IBOutlet weak var checkboxBtn: UIButton!

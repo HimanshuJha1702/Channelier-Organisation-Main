@@ -51,23 +51,19 @@ class HomeViewController: UIViewController {
         switch menuType {
         
             case .home:
-//                        guard let HomeViewController = storyboard?.instantiateViewController(identifier: "HomeViewController") as? HomeViewController else { return }
-//                        HomeViewController.modalPresentationStyle = .overCurrentContext
-//                        present(HomeViewController, animated: false)
-            
-                let mainstoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-                let vc = mainstoryboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-                vc.modalPresentationStyle = .fullScreen
-                self.present(vc, animated: false, completion: nil)
+                        let mainstoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                        let vc = mainstoryboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                        vc.modalPresentationStyle = .fullScreen
+                        self.present(vc, animated: false, completion: nil)
             
             case .profile:
                         let transition: CATransition = CATransition()
                         performAnimation(transition: transition)
                         self.view.window!.layer.add(transition, forKey: nil)
-            let mainstoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            let vc = mainstoryboard.instantiateViewController(withIdentifier: "ProfileVC") as! ProfileVC
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: false, completion: nil)
+                        let mainstoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                        let vc = mainstoryboard.instantiateViewController(withIdentifier: "ProfileVC") as! ProfileVC
+                        vc.modalPresentationStyle = .fullScreen
+                        self.present(vc, animated: false, completion: nil)
 //                        guard let ProfileVC = storyboard?.instantiateViewController(identifier: "ProfileVC") as? ProfileVC else { return }
 //                        ProfileVC.modalPresentationStyle = .overCurrentContext
 //                        present(ProfileVC, animated: false)
@@ -76,11 +72,10 @@ class HomeViewController: UIViewController {
                         let transition: CATransition = CATransition()
                         performAnimation(transition: transition)
                         self.view.window!.layer.add(transition, forKey: nil)
-            
-            let mainstoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            let vc = mainstoryboard.instantiateViewController(withIdentifier: "SettingsVC") as! SettingsVC
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: false, completion: nil)
+                        let mainstoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                        let vc = mainstoryboard.instantiateViewController(withIdentifier: "SettingsVC") as! SettingsVC
+                        vc.modalPresentationStyle = .fullScreen
+                        self.present(vc, animated: false, completion: nil)
 
             
             

@@ -3,5 +3,5 @@
 
 target 'Channelier Organisation' do
   pod 'Toast-Swift', '~> 5.0.0'
-
+  pod 'KRProgressHUD'
 end

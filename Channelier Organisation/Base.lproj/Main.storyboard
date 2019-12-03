@@ -171,7 +171,7 @@
                                 <rect key="frame" x="29" y="414" width="18" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="button:Y0p-lT-n8u:image"/>
-                                <state key="selected" image="A6167EEC-9AF2-4F0D-B6A8-197F87BED6A6"/>
+                                <state key="selected" image="3DA8BC23-43E5-4B5C-855E-8C84FC188060"/>
                                 <connections>
                                     <action selector="checkboxAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t9n-ww-VLK"/>
                                 </connections>
@@ -656,7 +656,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zPd-rr-TGv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1728.8" y="850.52473763118451"/>
+            <point key="canvasLocation" x="937" y="851"/>
         </scene>
         <!--Sales Report-->
         <scene sceneID="wx1-ts-xSM">
@@ -693,18 +693,30 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.56470588239999997" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DTi-sf-F5j">
+                                <rect key="frame" x="0.0" y="76" width="375" height="591"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.23529411759999999" green="0.95294117649999999" blue="1" alpha="0.26560786730000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="rad-bm-aT2"/>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="DTi-sf-F5j" id="eHT-n9-93S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5As-Lb-gWp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="936.79999999999995" y="850.52473763118451"/>
+            <point key="canvasLocation" x="1729" y="851"/>
         </scene>
     </scenes>
     <resources>
-        <image name="A6167EEC-9AF2-4F0D-B6A8-197F87BED6A6" width="42" height="42">
+        <image name="3DA8BC23-43E5-4B5C-855E-8C84FC188060" width="42" height="42">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMSAAGGoF8QD05T
 S2V5ZWRBcmNoaXZlctEICVRyb290gAGvEBcLDBkaIRQmKisyNTo9PkNGR0pUXF1hZFUkbnVsbNYNDg8Q
