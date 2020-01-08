@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A0176E423C5C055008E5B42 /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0176E323C5C055008E5B42 /* CheckInternet.swift */; };
 		4A1DDD4C237FDFBA00B7BE1D /* SalesReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1DDD4B237FDFBA00B7BE1D /* SalesReport.swift */; };
 		4A2AAA66237D1C93001199D1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2AAA65237D1C93001199D1 /* HomeViewController.swift */; };
 		4A2AAA68237D1E93001199D1 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2AAA67237D1E93001199D1 /* ProfileVC.swift */; };
-		4A2AAA6A237D1EA5001199D1 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2AAA69237D1EA5001199D1 /* SettingsVC.swift */; };
 		4A2AAA6C237D1F29001199D1 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2AAA6B237D1F29001199D1 /* MenuViewController.swift */; };
 		4A2AAA6E237D1F93001199D1 /* SlideInTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2AAA6D237D1F93001199D1 /* SlideInTransition.swift */; };
 		4A5C24792390E93B00259995 /* FilterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5C24782390E93B00259995 /* FilterTableViewController.swift */; };
@@ -27,10 +27,10 @@
 
 /* Begin PBXFileReference section */
 		40B50DCB6102978BA1B1F7C6 /* Pods-Channelier Organisation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Channelier Organisation.release.xcconfig"; path = "Target Support Files/Pods-Channelier Organisation/Pods-Channelier Organisation.release.xcconfig"; sourceTree = "<group>"; };
+		4A0176E323C5C055008E5B42 /* CheckInternet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInternet.swift; sourceTree = "<group>"; };
 		4A1DDD4B237FDFBA00B7BE1D /* SalesReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesReport.swift; sourceTree = "<group>"; };
 		4A2AAA65237D1C93001199D1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4A2AAA67237D1E93001199D1 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
-		4A2AAA69237D1EA5001199D1 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		4A2AAA6B237D1F29001199D1 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		4A2AAA6D237D1F93001199D1 /* SlideInTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInTransition.swift; sourceTree = "<group>"; };
 		4A5C24782390E93B00259995 /* FilterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewController.swift; sourceTree = "<group>"; };
@@ -65,7 +65,6 @@
 			children = (
 				4A2AAA65237D1C93001199D1 /* HomeViewController.swift */,
 				4A2AAA67237D1E93001199D1 /* ProfileVC.swift */,
-				4A2AAA69237D1EA5001199D1 /* SettingsVC.swift */,
 				4A2AAA6B237D1F29001199D1 /* MenuViewController.swift */,
 				4A2AAA6D237D1F93001199D1 /* SlideInTransition.swift */,
 				4AFF1305237E98CE00EFCE5A /* ContainerVC.swift */,
@@ -105,6 +104,7 @@
 				4A76A4E4237C572800FCE082 /* Assets.xcassets */,
 				4A76A4E9237C572800FCE082 /* Info.plist */,
 				4AF1F204238D30AF00CD8BE7 /* Launch Screen.storyboard */,
+				4A0176E323C5C055008E5B42 /* CheckInternet.swift */,
 			);
 			path = "Channelier Organisation";
 			sourceTree = "<group>";
@@ -232,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A5C24792390E93B00259995 /* FilterTableViewController.swift in Sources */,
+				4A0176E423C5C055008E5B42 /* CheckInternet.swift in Sources */,
 				4A2AAA68237D1E93001199D1 /* ProfileVC.swift in Sources */,
 				4A76A4DC237C572400FCE082 /* AppDelegate.swift in Sources */,
 				4A76A4DE237C572400FCE082 /* SceneDelegate.swift in Sources */,
@@ -241,7 +242,6 @@
 				4A2AAA6E237D1F93001199D1 /* SlideInTransition.swift in Sources */,
 				4A2AAA66237D1C93001199D1 /* HomeViewController.swift in Sources */,
 				4A1DDD4C237FDFBA00B7BE1D /* SalesReport.swift in Sources */,
-				4A2AAA6A237D1EA5001199D1 /* SettingsVC.swift in Sources */,
 				4A5C247B2390F14B00259995 /* SlideOutTransitionFilter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,7 +12,7 @@ import UIKit
 enum MenuType: Int {
     case home
     case profile
-    case settings
+    case logout
     
 }
 

@@ -68,17 +68,12 @@ class HomeViewController: UIViewController {
 //                        ProfileVC.modalPresentationStyle = .overCurrentContext
 //                        present(ProfileVC, animated: false)
 //            
-            case .settings:
-                        let transition: CATransition = CATransition()
-                        performAnimation(transition: transition)
-                        self.view.window!.layer.add(transition, forKey: nil)
+            case .logout:
                         let mainstoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-                        let vc = mainstoryboard.instantiateViewController(withIdentifier: "SettingsVC") as! SettingsVC
+                        let vc = mainstoryboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
                         vc.modalPresentationStyle = .fullScreen
                         self.present(vc, animated: false, completion: nil)
-
-            
-            
+    
             default :
                         break
             

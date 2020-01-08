@@ -42,6 +42,11 @@ class LoginVC: UIViewController {
         iconClick = !iconClick
     }
     
+    func Alert (Message: String){
+        let alert = UIAlertController(title: "Warning!", message: Message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
     
     func validLogin () {
         DispatchQueue.main.async(execute: {
@@ -54,16 +59,16 @@ class LoginVC: UIViewController {
     
     func wrongCredentials() {
         DispatchQueue.main.async(execute: {
-        let alert = UIAlertController(title: "Warning!", message: "Wrong Credentials", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+            self.Alert(Message: "Wrong Credentials")
         })
     }
+    
     @IBAction func loginAction(_ sender: UIButton) {
         
-        let parameters = ["email":emailTxtField.text ?? "none","password":passwordBtn.text ?? "none"] as [String : Any]
+        if (CheckInternet.Connection() == true && self.checkBoxNumber == 1){
+            let parameters = ["email":emailTxtField.text ?? "none","password":passwordBtn.text ?? "none"] as [String : Any]
                 print(parameters)
-                guard let url = URL(string: "https://dev.channelier.com/index.php?route=feed/rest_api_v2/validateLogin&gcmToken=f94Wm0gGyag:APA91bGIxPBb5MbvXy2qWf4aL70VKtGUEVK8asCCwtOxDs-UHZhacFxBxXwuk2EvZ2ThghbXhAp4hDyppAN9QUP-9w9FmfPQu5GLGPHfI5HyIgP27UYU-x2kcZxmMoPjCMJs0J20vUXv&gcmFlag=0&date=0&key=12345&syncdate=0") else { return }
+            guard let url = URL(string: " https://dev.channelier.com/index.php?route=feed/rest_api_v2/validateLogin&gcmToken=f94Wm0gGyag:APA91bGIxPBb5MbvXy2qWf4aL70VKtGUEVK8asCCwtOxDs-UHZhacFxBxXwuk2EvZ2ThghbXhAp4hDyppAN9QUP-9w9FmfPQu5GLGPHfI5HyIgP27UYU-x2kcZxmMoPjCMJs0J20vUXv&gcmFlag=0&date=0&key=12345&syncdate=0") else {  return }
                 var request = URLRequest(url: url)
                 request.httpMethod = "POST"
         //        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -73,12 +78,13 @@ class LoginVC: UIViewController {
                 let session = URLSession.shared
                 session.dataTask(with: request) { (data, response, error) in
                     if let response = response {
-                        //print(response)
+//                        print(response)
                     }
                     
                     if let data = data {
                         do {
                             let json = try JSONSerialization.jsonObject(with: data, options: [])
+                            print(json)
                             if let dictionary = json as? [String: Any?] {
                                 print(dictionary)
                                 let checkVar = dictionary["gcm_success"] as? Int32
@@ -93,16 +99,29 @@ class LoginVC: UIViewController {
                                 }
                                                                                                
                             }
-                            print(json)
+//                            print(json)
                         } catch {
                             print(error)
                         }
                     }
                     
                 }.resume()
+        }
+         else if(CheckInternet.Connection() == false){
+            self.Alert(Message: "No Internet Connection")
+        }
+            
+        else if(self.checkBoxNumber == 0){
+            self.Alert(Message: "Please select the terms and conditions")
+        }
+        
+        else {
+            self.Alert(Message: "No user registered with this maild ID")
+        }
 //        self.validLogin()
     }
  
+    
     
     @IBAction func registerAction(_ sender: UIButton) {
         openLink(urlString: "https://beta.channelier.com/index.php?route=account/register")

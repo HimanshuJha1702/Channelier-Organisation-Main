@@ -28,6 +28,8 @@ class SalesReport: UIViewController, WKNavigationDelegate {
     }
     @IBOutlet weak var webView: WKWebView!
     
+    @IBOutlet weak var actInd: UIActivityIndicatorView!
+    
     @IBAction func backBtn(_ sender: UIButton) {
         let transition: CATransition = CATransition()
         transition.duration = 0.4
@@ -41,15 +43,22 @@ class SalesReport: UIViewController, WKNavigationDelegate {
         self.present(vc, animated: false, completion: nil)
     }
     
-    
+    @IBAction func reloadButton(_ sender: UIButton){
+        webView.reload()
+    }
     
     override func viewDidLoad() {
         
         let url = URL(string: "https://dev.channelier.com/index.php?route=report/order/sales&email=sandeeppvec@gmail.com&password=demo&location_app=1")!
         webView.load(URLRequest(url: url))
+        webView.addSubview(actInd)
+        actInd.startAnimating()
+        
+        webView.navigationDelegate = self
+        actInd.hidesWhenStopped = true
         
         super.viewDidLoad()
-        let label:UILabel = UILabel(frame: CGRect(x: self.view.frame.width/3.0 , y: 30, width: 150, height: 30))
+        let label:UILabel = UILabel(frame: CGRect(x: self.view.frame.width/3.0 , y: 40, width: 150, height: 30))
         label.text = "Sales Report"
         label.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         label.font = UIFont.systemFont(ofSize: 22.0)
@@ -79,6 +88,31 @@ class SalesReport: UIViewController, WKNavigationDelegate {
                 
             }
     }
+    
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        actInd.startAnimating()
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        self.webView.evaluateJavaScript("javascript:(function() { " +
+        "var head = document.getElementsByClassName('menu-div col-xs-12 padding_zero')[0].style.display='none';" +
+        "})()") { (result, error) in
+               if error == nil {
+                   // header is hide now
+               }
+           }
+        actInd.stopAnimating()
+    }
+    
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        actInd.stopAnimating()
+        print("i am running")
+        let alert = UIAlertController(title: "Warning!", message: "Please check you internet connection", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
 }
 
 extension SalesReport: UIViewControllerTransitioningDelegate {
@@ -93,4 +127,6 @@ extension SalesReport: UIViewControllerTransitioningDelegate {
     }
 }
 
+
+//view.loadUrl;
 

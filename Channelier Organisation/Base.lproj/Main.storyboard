@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -79,7 +79,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7U4-gj-Qb8">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Log Out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7U4-gj-Qb8">
                                                     <rect key="frame" x="80" y="17" width="74" height="27"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18.5"/>
@@ -171,7 +171,7 @@
                                 <rect key="frame" x="29" y="414" width="18" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="button:Y0p-lT-n8u:image"/>
-                                <state key="selected" image="3DA8BC23-43E5-4B5C-855E-8C84FC188060"/>
+                                <state key="selected" image="92851CF7-49D9-457B-BC92-A7493A33D120"/>
                                 <connections>
                                     <action selector="checkboxAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t9n-ww-VLK"/>
                                 </connections>
@@ -243,17 +243,6 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kb2-v8-HeX">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTj-eI-RGu">
-                                        <rect key="frame" x="8" y="30" width="30" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="back_button"/>
-                                        <connections>
-                                            <action selector="backBtn:" destination="8yQ-YE-78w" eventType="touchUpInside" id="zDO-Wq-BFn"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.56470588239999997" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
@@ -263,7 +252,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2s2-su-dZP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="851"/>
+            <point key="canvasLocation" x="136.80000000000001" y="850.52473763118451"/>
         </scene>
         <!--ProfileVC-->
         <scene sceneID="kgV-K7-s3E">
@@ -666,57 +655,80 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pvj-TF-3mq">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pvj-TF-3mq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAZ-4U-CoL">
-                                        <rect key="frame" x="8" y="30" width="30" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAZ-4U-CoL">
+                                        <rect key="frame" x="8" y="18" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="T4c-x9-RLm"/>
+                                            <constraint firstAttribute="width" constant="30" id="gVc-Ph-HNv"/>
+                                        </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="back_button"/>
                                         <connections>
                                             <action selector="backBtn:" destination="UWf-pl-rOS" eventType="touchUpInside" id="uXe-Ye-U0c"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7kD-b9-DiW">
-                                        <rect key="frame" x="326" y="23" width="41" height="39"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7kD-b9-DiW">
+                                        <rect key="frame" x="337" y="16" width="30" height="34"/>
                                         <connections>
-                                            <action selector="didTapMenu:" destination="UWf-pl-rOS" eventType="touchUpInside" id="ntU-GU-Ykt"/>
+                                            <action selector="reloadButton:" destination="UWf-pl-rOS" eventType="touchUpInside" id="Cy3-4n-se6"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="filter" translatesAutoresizingMaskIntoConstraints="NO" id="yOo-Fe-o6g">
-                                        <rect key="frame" x="334" y="26" width="27" height="34"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sync" translatesAutoresizingMaskIntoConstraints="NO" id="yOo-Fe-o6g">
+                                        <rect key="frame" x="334" y="18" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.56470588239999997" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="7kD-b9-DiW" secondAttribute="trailing" constant="8" id="2yi-Ld-8jZ"/>
+                                    <constraint firstAttribute="height" constant="68" id="I2P-Qf-hlV"/>
+                                    <constraint firstItem="qAZ-4U-CoL" firstAttribute="top" secondItem="7kD-b9-DiW" secondAttribute="bottom" constant="-32" id="Jgc-E2-4vC"/>
+                                    <constraint firstItem="qAZ-4U-CoL" firstAttribute="leading" secondItem="pvj-TF-3mq" secondAttribute="leading" constant="8" id="W1p-Pj-TwX"/>
+                                    <constraint firstAttribute="bottom" secondItem="qAZ-4U-CoL" secondAttribute="bottom" constant="20" id="f54-2U-MJl"/>
+                                </constraints>
                             </view>
-                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DTi-sf-F5j">
-                                <rect key="frame" x="0.0" y="76" width="375" height="591"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.23529411759999999" green="0.95294117649999999" blue="1" alpha="0.26560786730000002" colorSpace="custom" customColorSpace="sRGB"/>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DTi-sf-F5j">
+                                <rect key="frame" x="0.0" y="68" width="375" height="599"/>
+                                <color key="backgroundColor" red="0.36078431372549019" green="0.38823529411764707" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="e7N-4H-LuF">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="pvj-TF-3mq" firstAttribute="leading" secondItem="rad-bm-aT2" secondAttribute="leading" id="3Tg-N2-MxG"/>
+                            <constraint firstItem="DTi-sf-F5j" firstAttribute="leading" secondItem="pvj-TF-3mq" secondAttribute="leading" id="A2b-FC-Kw3"/>
+                            <constraint firstItem="DTi-sf-F5j" firstAttribute="trailing" secondItem="pvj-TF-3mq" secondAttribute="trailing" id="Lfz-dw-dF3"/>
+                            <constraint firstItem="pvj-TF-3mq" firstAttribute="trailing" secondItem="rad-bm-aT2" secondAttribute="trailing" id="ZV4-KQ-q1e"/>
+                            <constraint firstItem="DTi-sf-F5j" firstAttribute="bottom" secondItem="rad-bm-aT2" secondAttribute="bottom" id="jgK-aO-UHd"/>
+                            <constraint firstItem="DTi-sf-F5j" firstAttribute="top" secondItem="pvj-TF-3mq" secondAttribute="bottom" id="nEG-hO-vA7"/>
+                            <constraint firstItem="pvj-TF-3mq" firstAttribute="top" secondItem="rad-bm-aT2" secondAttribute="top" id="sff-V0-XYi"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="rad-bm-aT2"/>
                     </view>
                     <connections>
+                        <outlet property="actInd" destination="e7N-4H-LuF" id="7yY-2H-ZwR"/>
                         <outlet property="webView" destination="DTi-sf-F5j" id="eHT-n9-93S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5As-Lb-gWp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1729" y="851"/>
+            <point key="canvasLocation" x="1728.8" y="850.52473763118451"/>
         </scene>
     </scenes>
     <resources>
-        <image name="3DA8BC23-43E5-4B5C-855E-8C84FC188060" width="42" height="42">
+        <image name="92851CF7-49D9-457B-BC92-A7493A33D120" width="42" height="42">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMSAAGGoF8QD05T
 S2V5ZWRBcmNoaXZlctEICVRyb290gAGvEBcLDBkaIRQmKisyNTo9PkNGR0pUXF1hZFUkbnVsbNYNDg8Q
@@ -6844,12 +6856,12 @@ xjQAA8Y8AAPGPgADxkAAA8ZCAAPGRAAD17AAA9e1AAPXwgAD18UAA9fSAAPX1wAD198AA9fiAAPX5wAD
 </mutableData>
         </image>
         <image name="channelier_logo" width="1000" height="166.5"/>
-        <image name="filter" width="36" height="36"/>
         <image name="menu" width="24" height="24"/>
         <image name="menu_header" width="456" height="258"/>
         <image name="pencil.tip.crop.circle" catalog="system" width="64" height="60"/>
         <image name="profile" width="12" height="12"/>
         <image name="show-password" width="42.5" height="42.5"/>
+        <image name="sync" width="48" height="48"/>
         <image name="task1" width="400" height="250"/>
         <image name="trash" catalog="system" width="60" height="64"/>
     </resources>
