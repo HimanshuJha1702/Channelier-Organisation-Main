@@ -13,9 +13,10 @@ import KRProgressHUD
 
 class LoginVC: UIViewController {
 
-    var checkBoxNumber = 1
+    var checkBoxNumber = 0
     var iconClick = true
     var emailID = "nil"
+    var checkedvalue = 0
     
     func openLink(urlString : String) {
         guard let url = URL(string: urlString) else {
@@ -44,16 +45,23 @@ class LoginVC: UIViewController {
     
     func Alert (Message: String){
         let alert = UIAlertController(title: "Warning!", message: Message, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
+   
+    
     func validLogin () {
         DispatchQueue.main.async(execute: {
-            let mainstoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            let vc = mainstoryboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: false, completion: nil)
+//            let mainstoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//            let vc = mainstoryboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+//            vc.modalPresentationStyle = .fullScreen
+//            self.present(vc, animated: false, completion: nil)
+            print("and thereafter i came here")
+            let alert = UIAlertController(title: "", message: "You are already logged in from another device, do you want to proceed ?", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil))
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         })
     }
     
@@ -68,29 +76,42 @@ class LoginVC: UIViewController {
         if (CheckInternet.Connection() == true && self.checkBoxNumber == 1){
             let parameters = ["email":emailTxtField.text ?? "none","password":passwordBtn.text ?? "none"] as [String : Any]
                 print(parameters)
-            guard let url = URL(string: " https://dev.channelier.com/index.php?route=feed/rest_api_v2/validateLogin&gcmToken=f94Wm0gGyag:APA91bGIxPBb5MbvXy2qWf4aL70VKtGUEVK8asCCwtOxDs-UHZhacFxBxXwuk2EvZ2ThghbXhAp4hDyppAN9QUP-9w9FmfPQu5GLGPHfI5HyIgP27UYU-x2kcZxmMoPjCMJs0J20vUXv&gcmFlag=0&date=0&key=12345&syncdate=0") else {  return }
+//            if("email" == "" || "password" == ""){
+//                self.Alert(Message: "Wrong EmailID/password!")
+//            }
+            guard let url = URL(string:  "https://dev.channelier.com/index.php?route=feed/rest_api_v2/validateLogin&gcmToken=f94Wm0gGyag:APA91bGIxPBb5MbvXy2qWf4aL70VKtGUEVK8asCCwtOxDs-UHZhacFxBxXwuk2EvZ2ThghbXhAp4hDyppAN9QUP-9w9FmfPQu5GLGPHfI5HyIgP27UYU-x2kcZxmMoPjCMJs0J20vUXv&gcmFlag=0&date=0&key=12345&syncdate=0") else { return }
                 var request = URLRequest(url: url)
                 request.httpMethod = "POST"
-        //        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+                request.addValue("application/json", forHTTPHeaderField: "Content-Type")
                 guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else { return }
                 request.httpBody = httpBody
-                
+            
+//                let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+//                let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+//                loadingIndicator.hidesWhenStopped = true
+//                loadingIndicator.style = UIActivityIndicatorView.Style.gray
+//                loadingIndicator.startAnimating();
+//                alert.view.addSubview(loadingIndicator)
+//                present(alert, animated: true, completion: nil)
+            
                 let session = URLSession.shared
                 session.dataTask(with: request) { (data, response, error) in
-                    if let response = response {
-//                        print(response)
-                    }
                     
                     if let data = data {
                         do {
                             let json = try JSONSerialization.jsonObject(with: data, options: [])
                             print(json)
                             if let dictionary = json as? [String: Any?] {
-                                print(dictionary)
-                                let checkVar = dictionary["gcm_success"] as? Int32
-                                if (checkVar == 0)
+                                //print(dictionary)
+                                let gcm_success_integer = dictionary["gcm_success"] as? Int32
+                                let succes_integer = dictionary["success"] as? Int32
+                
+                                if (gcm_success_integer == 0 && succes_integer == 1)
                                 {
+                                    self.checkedvalue = 1
+                                    print(self.checkedvalue)
                                     self.validLogin()
+                                    print("I really came here")
                                 }
 
                                 else {
@@ -106,8 +127,11 @@ class LoginVC: UIViewController {
                     }
                     
                 }.resume()
+           // dismiss(animated: false, completion: nil)
+         
         }
-         else if(CheckInternet.Connection() == false){
+        
+        else if(CheckInternet.Connection() == false){
             self.Alert(Message: "No Internet Connection")
         }
             
@@ -206,6 +230,7 @@ class LoginVC: UIViewController {
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         self.view.addGestureRecognizer(tap)
+        
         // Do any additional setup after loading the view.
     }
 
