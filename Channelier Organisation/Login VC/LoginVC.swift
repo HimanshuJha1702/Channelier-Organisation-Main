@@ -6,6 +6,14 @@
 //  Copyright © 2019 Himanshu Jha. All rights reserved.
 //
 
+//let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+//let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+//loadingIndicator.hidesWhenStopped = true
+//loadingIndicator.style = UIActivityIndicatorView.Style.gray
+//loadingIndicator.startAnimating();
+//alert.view.addSubview(loadingIndicator)
+//present(alert, animated: true, completion: nil)
+
 import UIKit
 import Foundation
 import Toast_Swift
@@ -17,6 +25,8 @@ class LoginVC: UIViewController {
     var iconClick = true
     var emailID = "nil"
     var checkedvalue = 0
+    var refreshToken = "none"
+    var token = "none"
     
     func openLink(urlString : String) {
         guard let url = URL(string: urlString) else {
@@ -53,14 +63,58 @@ class LoginVC: UIViewController {
     
     func validLogin () {
         DispatchQueue.main.async(execute: {
-//            let mainstoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-//            let vc = mainstoryboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-//            vc.modalPresentationStyle = .fullScreen
-//            self.present(vc, animated: false, completion: nil)
             print("and thereafter i came here")
             let alert = UIAlertController(title: "", message: "You are already logged in from another device, do you want to proceed ?", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil))
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { _ in
+                DispatchQueue.main.async(execute: {
+                    
+                    let parameters = ["email":self.emailTxtField.text ?? "none","password":self.passwordBtn.text ?? "none"] as [String : Any]
+                                
+                                guard let url = URL(string:  "https://dev.channelier.com/index.php?route=feed/rest_api_v2/validateLogin&gcmToken=f94Wm0gGyag:APA91bGIxPBb5MbvXy2qWf4aL70VKtGUEVK8asCCwtOxDs-UHZhacFxBxXwuk2EvZ2ThghbXhAp4hDyppAN9QUP-9w9FmfPQu5GLGPHfI5HyIgP27UYU-x2kcZxmMoPjCMJs0J20vUXv&gcmFlag=1&date=0&key=12345&syncdate=0") else { return }
+                                    var request = URLRequest(url: url)
+                                    request.httpMethod = "POST"
+                                    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+                                    guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else { return }
+                                    request.httpBody = httpBody
+                                
+                                    let session = URLSession.shared
+                                    session.dataTask(with: request) { (data, response, error) in
+                                        
+                                        if let data = data {
+                                            do {
+                                                let json = try JSONSerialization.jsonObject(with: data, options: [])
+                                                print(json)
+                                                if let dictionary = json as? [String: Any?] {
+                                                    //print(dictionary)
+                                                    let gcm_success_integer = dictionary["gcm_success"] as? Int32
+                                                    let succes_integer = dictionary["success"] as? Int32
+                                    
+                                                    if(gcm_success_integer == 1 && succes_integer == 1){
+                                                        print("api hit successful")
+                                                        DispatchQueue.main.async(execute: {
+                                                            let mainstoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                                                            let vc = mainstoryboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                                                            vc.modalPresentationStyle = .fullScreen
+                                                            self.present(vc, animated: false, completion: nil)
+                                                        })
+                                                    }
+                                                    else {
+                                                        print("I came here")
+                                                        self.wrongCredentials()
+                                                    }
+                                                                                                                   
+                                                }
+                    //                            print(json)
+                                            } catch {
+                                                print(error)
+                                            }
+                                        }
+                                        
+                                    }.resume()
+                    
+                })
+            }))
             self.present(alert, animated: true, completion: nil)
         })
     }
@@ -75,24 +129,13 @@ class LoginVC: UIViewController {
         
         if (CheckInternet.Connection() == true && self.checkBoxNumber == 1){
             let parameters = ["email":emailTxtField.text ?? "none","password":passwordBtn.text ?? "none"] as [String : Any]
-                print(parameters)
-//            if("email" == "" || "password" == ""){
-//                self.Alert(Message: "Wrong EmailID/password!")
-//            }
+            print(parameters)
             guard let url = URL(string:  "https://dev.channelier.com/index.php?route=feed/rest_api_v2/validateLogin&gcmToken=f94Wm0gGyag:APA91bGIxPBb5MbvXy2qWf4aL70VKtGUEVK8asCCwtOxDs-UHZhacFxBxXwuk2EvZ2ThghbXhAp4hDyppAN9QUP-9w9FmfPQu5GLGPHfI5HyIgP27UYU-x2kcZxmMoPjCMJs0J20vUXv&gcmFlag=0&date=0&key=12345&syncdate=0") else { return }
                 var request = URLRequest(url: url)
                 request.httpMethod = "POST"
                 request.addValue("application/json", forHTTPHeaderField: "Content-Type")
                 guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else { return }
                 request.httpBody = httpBody
-            
-//                let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
-//                let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
-//                loadingIndicator.hidesWhenStopped = true
-//                loadingIndicator.style = UIActivityIndicatorView.Style.gray
-//                loadingIndicator.startAnimating();
-//                alert.view.addSubview(loadingIndicator)
-//                present(alert, animated: true, completion: nil)
             
                 let session = URLSession.shared
                 session.dataTask(with: request) { (data, response, error) in
@@ -113,7 +156,16 @@ class LoginVC: UIViewController {
                                     self.validLogin()
                                     print("I really came here")
                                 }
-
+                                else if(gcm_success_integer == 1 && succes_integer == 1){
+                                    print("api hit successful")
+                                    DispatchQueue.main.async(execute: {
+                                        self.refreshToken = "refresh token"
+                                        let mainstoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                                        let vc = mainstoryboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                                        vc.modalPresentationStyle = .fullScreen
+                                        self.present(vc, animated: false, completion: nil)
+                                    })
+                                }
                                 else {
                                     print("I came here")
                                     self.wrongCredentials()
@@ -144,6 +196,7 @@ class LoginVC: UIViewController {
         }
 //        self.validLogin()
     }
+    
  
     
     
