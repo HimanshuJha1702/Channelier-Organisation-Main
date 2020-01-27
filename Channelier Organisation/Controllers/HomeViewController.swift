@@ -35,7 +35,6 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var topView: UIView!
     
-    
     let transition = SlideInTransition()
     
     override func viewDidLoad() {

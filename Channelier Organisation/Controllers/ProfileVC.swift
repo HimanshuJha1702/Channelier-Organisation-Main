@@ -24,10 +24,12 @@ class ProfileVC: UIViewController {
         self.present(vc, animated: false, completion: nil)
     }
     
+    let loginvc = LoginVC()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print(self.loginvc.refreshToken)
         let label:UILabel = UILabel(frame: CGRect(x: 140, y: 30, width: 150, height: 30))
         label.text = "Profile"
         label.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)

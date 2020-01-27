@@ -24,7 +24,6 @@ class LoginVC: UIViewController {
     var checkBoxNumber = 0
     var iconClick = true
     var emailID = "nil"
-    var checkedvalue = 0
     var refreshToken = "none"
     var token = "none"
     
@@ -84,12 +83,11 @@ class LoginVC: UIViewController {
                                         if let data = data {
                                             do {
                                                 let json = try JSONSerialization.jsonObject(with: data, options: [])
-                                                print(json)
+//                                                print(json)
                                                 if let dictionary = json as? [String: Any?] {
                                                     //print(dictionary)
                                                     let gcm_success_integer = dictionary["gcm_success"] as? Int32
                                                     let succes_integer = dictionary["success"] as? Int32
-                                    
                                                     if(gcm_success_integer == 1 && succes_integer == 1){
                                                         print("api hit successful")
                                                         DispatchQueue.main.async(execute: {
@@ -143,23 +141,23 @@ class LoginVC: UIViewController {
                     if let data = data {
                         do {
                             let json = try JSONSerialization.jsonObject(with: data, options: [])
-                            print(json)
+//                            print(json)
                             if let dictionary = json as? [String: Any?] {
-                                //print(dictionary)
+//                                print(dictionary)
                                 let gcm_success_integer = dictionary["gcm_success"] as? Int32
                                 let succes_integer = dictionary["success"] as? Int32
-                
                                 if (gcm_success_integer == 0 && succes_integer == 1)
                                 {
-                                    self.checkedvalue = 1
-                                    print(self.checkedvalue)
                                     self.validLogin()
                                     print("I really came here")
                                 }
                                 else if(gcm_success_integer == 1 && succes_integer == 1){
                                     print("api hit successful")
                                     DispatchQueue.main.async(execute: {
-                                        self.refreshToken = "refresh token"
+                                        let tokenValue = dictionary["tokens"] as? [String: Any?]
+                                        let refreshToken = tokenValue!["refresh_token"] as? String
+                                        self.refreshToken = refreshToken!
+                                        print(refreshToken!)
                                         let mainstoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
                                         let vc = mainstoryboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
                                         vc.modalPresentationStyle = .fullScreen
@@ -170,7 +168,6 @@ class LoginVC: UIViewController {
                                     print("I came here")
                                     self.wrongCredentials()
                                 }
-                                                                                               
                             }
 //                            print(json)
                         } catch {
@@ -192,7 +189,7 @@ class LoginVC: UIViewController {
         }
         
         else {
-            self.Alert(Message: "No user registered with this maild ID")
+            self.Alert(Message: "No user registered with this E-mail ID")
         }
 //        self.validLogin()
     }
