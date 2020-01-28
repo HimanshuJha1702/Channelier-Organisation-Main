@@ -171,7 +171,7 @@
                                 <rect key="frame" x="29" y="414" width="18" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="button:Y0p-lT-n8u:image"/>
-                                <state key="selected" image="C4951D84-978F-41F9-8821-3C310700D580"/>
+                                <state key="selected" image="4EEFA5C2-8ADF-4E43-B4B9-86D7EB069F95"/>
                                 <connections>
                                     <action selector="checkboxAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t9n-ww-VLK"/>
                                 </connections>
@@ -324,7 +324,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oJ1-HJ-wpz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-746" y="851"/>
+            <point key="canvasLocation" x="-554" y="835"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="TAV-vN-2f8">
@@ -728,7 +728,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="C4951D84-978F-41F9-8821-3C310700D580" width="42" height="42">
+        <image name="4EEFA5C2-8ADF-4E43-B4B9-86D7EB069F95" width="42" height="42">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMSAAGGoF8QD05T
 S2V5ZWRBcmNoaXZlctEICVRyb290gAGvEBcLDBkaIRQmKisyNTo9PkNGR0pUXF1hZFUkbnVsbNYNDg8Q

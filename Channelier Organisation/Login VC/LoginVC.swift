@@ -17,7 +17,6 @@
 import UIKit
 import Foundation
 import Toast_Swift
-import KRProgressHUD
 
 class LoginVC: UIViewController {
 
@@ -57,8 +56,6 @@ class LoginVC: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-    
-   
     
     func validLogin () {
         DispatchQueue.main.async(execute: {
@@ -103,7 +100,6 @@ class LoginVC: UIViewController {
                                                     }
                                                                                                                    
                                                 }
-                    //                            print(json)
                                             } catch {
                                                 print(error)
                                             }
